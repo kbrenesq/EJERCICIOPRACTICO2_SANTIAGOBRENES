@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="~{/template :: head}">
+    <title>Cine Magaly - Peliculas</title>
+</head>
+<body>
+<nav th:replace="~{/template :: nav}"></nav>
+
+<main class="container">
+    <h1>Administracion de Usuarios</h1>
+    <a class="btn-black">Agregar usuario</a>
+    <br>
+    <br>
+    <br>
+    <div class="">
+        <div class="module-items-headers">
+            <span>id</span>
+            <span>nombre</span>
+            <span>correo</span>
+            <span>rol</span>
+            <span>acciones</span>
+        </div>
+
+        <div class="module-items-item" th:each="usuario : ${usuarios}">
+            <span th:text="${usuario.id}"></span>
+            <span th:text="${usuario.nombre}"></span>
+            <span th:text="${usuario.correo}"></span>
+            <span th:text="${usuario.rol}"></span>
+            <div>
+                <a href="" class="btn-black">Editar</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer th:replace="~{/template :: footer}"></footer>
+</body>
+</html>

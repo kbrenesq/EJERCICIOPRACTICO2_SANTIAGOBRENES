@@ -1,0 +1,8 @@
+<article class="cartelera-pelicula"
+         th:each="pelicula : ${peliculas}"
+         th:fragment="card-pelicula (peliculas)"
+>
+    <h3 th:text="${pelicula.Titulo}"></h3>
+    <p><strong>Tipo: </strong><span th:text="${pelicula.tipo}"></span></p>
+    <a class="btn">Reservar funcion</a>
+</article>

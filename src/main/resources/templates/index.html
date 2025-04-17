@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="~{/template :: head}">
+    <title>Cine Magaly</title>
+</head>
+<body>
+<nav th:replace="~{/template :: nav}"></nav>
+
+<section class="landing">
+    <div class="container landing-content">
+        <div>
+            <span class="landing-header">Peliculas, siempre</span>
+            <a href="#cartelera" class="btn">Ver cartelera</a>
+        </div>
+
+        <iframe
+                width="560" height="315" src="https://www.youtube.com/embed/1Vnghdsjmd0?si=Qrd24nd1GOhp6W32"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+    </div>
+</section>
+
+
+<main>
+    <section class="container cartelera" id="cartelera">
+        <h2>Cartelera</h2>
+        <div class="cartelera-grid">
+            <article th:replace="~{/cartelera :: card-pelicula (${peliculas})}"></article>
+        </div>
+    </section>
+</main>
+
+<footer th:replace="~{/template :: footer}"></footer>
+</body>
+</html>

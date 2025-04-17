@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="~{/template :: head}">
+    <title>Cine Magaly - Peliculas</title>
+</head>
+<body>
+<nav th:replace="~{/template :: nav}"></nav>
+
+<main class="container">
+    <h1>Nueva pelicula</h1>
+    <form th:action="@{/peliculas/guardar}" th:object="${pelicula}" method="post">
+        <!-- Campo oculto para el ID (necesario en caso de edición) -->
+        <input type="hidden" th:field="*{id}"/>
+
+        <div>
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" th:field="*{titulo}" required/>
+        </div>
+
+        <div>
+            <label for="tipo">Tipo:</label>
+            <select id="tipo" th:field="*{tipo}" required>
+                <option value="">-- Selecciona una opción --</option>
+                <option value="PELICULA">Película</option>
+                <option value="OBRA">Obra</option>
+            </select>
+        </div>
+
+        <div>
+            <button type="submit">Guardar</button>
+        </div>
+    </form>
+</main>
+
+<footer th:replace="~{/template :: footer}"></footer>
+</body>
+</html>
