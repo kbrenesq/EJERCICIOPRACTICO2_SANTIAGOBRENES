@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="~{/template :: head}">
+    <title>Cine Magaly - Peliculas</title>
+</head>
+<body>
+<nav th:replace="~{/template :: nav}"></nav>
+
+<main class="container">
+    <h1 th:text="Reserva"></h1>
+    <form th:action="@{/reserva/guardar}" th:object="${reserva}" method="post">
+        <input type="hidden" th:field="*{id}" />
+        <input type="hidden" th:field="*{usuario.id}" />
+        <input type="hidden" th:field="*{funcion.id}" />
+
+        <div>
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" th:value="${usuario.nombre}" disabled/>
+        </div>
+
+        <div>
+            <label for="funcion">Función:</label>
+            <input type="text" id="funcion" name="funcion" th:value="${funcion.id}" disabled/>
+        </div>
+
+        <div>
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" min="1" />
+        </div>
+
+        <div>
+            <button type="submit">Crear Reserva</button>
+        </div>
+    </form>
+
+</main>
+
+<footer th:replace="~{/template :: footer}"></footer>
+</body>
+</html>

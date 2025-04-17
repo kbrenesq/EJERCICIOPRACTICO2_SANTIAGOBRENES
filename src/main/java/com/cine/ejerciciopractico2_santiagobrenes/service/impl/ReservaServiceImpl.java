@@ -19,4 +19,9 @@ public class ReservaServiceImpl implements ReservaService {
     public List<Reserva> getReservas() {
         return reservaDao.findAll();
     }
+
+    @Override
+    public void save(Reserva reserva) {
+        reservaDao.save(reserva);
+    }
 }

@@ -10,12 +10,14 @@
     <h1 th:text="${pelicula.titulo}"></h1>
 
     <h2>Funciones</h2>
-    <article th:each="funcion : ${funciones}">
-        <span th:text="${funcion.fecha}"></span>
-        <span th:text="${funcion.hora}"></span>
-        <span th:text="${funcion.sala}"></span>
-        <a>Reservar</a>
-    </article>
+    <div class="funciones">
+        <article th:each="funcion : ${funciones}" class="funcion">
+            <span th:text="${funcion.fecha}"></span>
+            <span th:text="${funcion.hora}"></span>
+            <span th:text="${funcion.sala}"></span>
+            <a th:href="@{/reserva/nueva/{funcion_id}(id=${funcion.id})}">Reservar</a>
+        </article>
+    </div>
 </main>
 
 <footer th:replace="~{/template :: footer}"></footer>

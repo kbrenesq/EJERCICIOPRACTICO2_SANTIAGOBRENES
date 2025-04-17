@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head th:fragment="head">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,8 +10,8 @@
     <nav th:fragment="nav">
         <a th:href="@{/}"><span>Cine Magaly</span></a>
         <ul>
-            <li><a th:href="@{/peliculas}">Gestion de peliculas</a></li>
-            <li><a th:href="@{/usuarios}">Gestion de usuarios</a></li>
+            <li><a th:href="@{/peliculas}" sec:authorize="hasRole('ROLE_ADMIN')">Gestion de peliculas</a></li>
+            <li><a th:href="@{/usuarios}" sec:authorize="hasRole('ROLE_ADMIN')">Gestion de usuarios</a></li>
         </ul>
     </nav>
 
