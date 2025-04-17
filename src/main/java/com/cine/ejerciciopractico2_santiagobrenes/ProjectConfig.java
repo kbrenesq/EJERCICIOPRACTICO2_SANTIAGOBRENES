@@ -32,8 +32,9 @@ public class ProjectConfig implements WebMvcConfigurer {
                 .authorizeHttpRequests((request) -> request
                         .requestMatchers("/css/**", "/img/**").permitAll() // Permitir acceso a recursos estáticos
                         .requestMatchers("/login", "/login/**").permitAll() // Permitir acceso a la página de login
-                        .requestMatchers("/", "peliculas/pelicula/**" ,"/reserva/**", "/reserva/guardar/**").hasRole("USUARIO")
-                        .requestMatchers("/peliculas/**", "/funcion/**", "/usuarios/**", "/").hasRole("ADMIN")
+                        .requestMatchers("/").permitAll()
+                        .requestMatchers( "peliculas/pelicula/**" ,"/reserva/**", "/reserva/guardar/**").hasRole("USUARIO")
+                        .requestMatchers("/peliculas/**", "/funcion/**", "/usuarios/**").hasRole("ADMIN")
                 )
                 .formLogin((form) -> form
                         .loginPage("/login") // Página de login personalizada

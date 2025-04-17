@@ -23,7 +23,7 @@
 </section>
 
 
-<main>
+<main sec:authorize="hasRole('ROLE_USUARIO')">
     <section class="container cartelera" id="cartelera">
         <h2>Cartelera</h2>
         <div class="cartelera-grid">
