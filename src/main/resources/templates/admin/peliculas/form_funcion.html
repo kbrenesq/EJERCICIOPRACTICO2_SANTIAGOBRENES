@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="~{/template :: head}">
+    <title>Cine Magaly - Peliculas</title>
+</head>
+<body>
+<nav th:replace="~{/template :: nav}"></nav>
+
+<main class="container">
+    <h1 th:text="'Nueva funcion para '+ ${tituloPelicula}"></h1>
+    <form th:action="@{/funcion/guardar}" th:object="${funcion}" method="post">
+        <input type="hidden" th:field="*{id}" />
+        <input type="hidden" th:field="*{pelicula.id}" />
+
+        <div>
+            <label>Fecha:</label>
+            <input type="date" th:field="*{fecha}" required />
+        </div>
+
+        <div>
+            <label>Hora:</label>
+            <input type="time" th:field="*{hora}" required />
+        </div>
+
+        <div>
+            <label>Sala:</label>
+            <input type="text" th:field="*{sala}" required />
+        </div>
+
+        <div>
+            <button type="submit">Guardar función</button>
+        </div>
+    </form>
+
+</main>
+
+<footer th:replace="~{/template :: footer}"></footer>
+</body>
+</html>

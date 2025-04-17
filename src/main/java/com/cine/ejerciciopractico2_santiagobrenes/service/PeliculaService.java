@@ -7,4 +7,6 @@ public interface PeliculaService {
     List<Pelicula> getPeliculas();
 
     void savePelicula(Pelicula pelicula);
+
+    Pelicula getPelicula(Pelicula pelicula);
 }

@@ -8,7 +8,7 @@
 
 <main class="container">
     <h1>Administracion de Peliculas</h1>
-    <a class="btn-black">Agregar pelicula</a>
+    <a class="btn-black" th:href="@{peliculas/nueva}">Agregar pelicula</a>
     <br>
     <br>
     <br>
@@ -25,7 +25,7 @@
             <span th:text="${pelicula.titulo}"></span>
             <span th:text="${pelicula.tipo}"></span>
             <div>
-                <a href="" class="btn-black">Editar</a>
+                <a  class="btn-black" th:href="@{/funcion/nueva/{id_pelicula}(id=${pelicula.id})}">Agregar funcion</a>
             </div>
         </div>
     </div>

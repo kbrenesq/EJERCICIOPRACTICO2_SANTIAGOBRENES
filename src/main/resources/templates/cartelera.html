@@ -2,7 +2,7 @@
          th:each="pelicula : ${peliculas}"
          th:fragment="card-pelicula (peliculas)"
 >
-    <h3 th:text="${pelicula.Titulo}"></h3>
+    <h3 th:text="${pelicula.titulo}"></h3>
     <p><strong>Tipo: </strong><span th:text="${pelicula.tipo}"></span></p>
-    <a class="btn">Reservar funcion</a>
+    <a class="btn" th:href="@{/peliculas/pelicula/{id_pelicula}(id=${pelicula.id})}">Reservar boletos</a>
 </article>

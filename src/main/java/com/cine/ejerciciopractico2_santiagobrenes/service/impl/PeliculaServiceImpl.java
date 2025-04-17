@@ -23,4 +23,9 @@ public class PeliculaServiceImpl implements PeliculaService {
     public void savePelicula(Pelicula pelicula) {
         peliculaDao.save(pelicula);
     }
+
+    @Override
+    public Pelicula getPelicula(Pelicula pelicula) {
+        return peliculaDao.findById(pelicula.getId()).orElse(null);
+    }
 }
